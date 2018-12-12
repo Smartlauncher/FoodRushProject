@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="400dp"
+    android:layout_gravity="center"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+
+    android:layout_marginBottom="5dp"
+    android:background="@android:color/white">
+
+
+    <TextView
+        android:id="@+id/user_name_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="208dp"
+        android:text="Max Mustermann"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="25dp" />
+
+    <TextView
+        android:id="@+id/Ware"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentStart="true"
+
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="117dp"
+        android:text="Order:"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/Bezahlung"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/Ware"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="92dp"
+        android:text="Reward:"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="134dp" />
+
+    <TextView
+        android:id="@+id/order_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/Ware"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="-3dp"
+        android:text="1x Clubmate"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/reward_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/Ware"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="-3dp"
+        android:layout_marginEnd="29dp"
+        android:text="15€"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="29dp"
+        android:background="@drawable/round_button_accept"
+        android:text="Accept" />
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="342dp"
+        android:layout_height="172dp"
+        android:layout_alignStart="@+id/button"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="12dp" />
+
+    <TextView
+        android:id="@+id/order_location"
+        android:layout_width="195dp"
+        android:layout_height="53dp"
+        android:layout_alignTop="@+id/button"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="3dp"
+        android:layout_toEndOf="@+id/user_name_order"
+        android:maxLength="40"
+        android:maxLines="2"
+        android:text="Berlin . Alexanderplatz"
+        android:textSize="18sp" />
+
+</RelativeLayout>
