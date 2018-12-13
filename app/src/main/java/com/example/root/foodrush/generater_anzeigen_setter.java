@@ -9,12 +9,15 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.List;
 
@@ -41,7 +44,15 @@ public class generater_anzeigen_setter extends RecyclerView.Adapter<generater_an
         myViewHolder.reward.setText(mData.get(i).getReward());
         myViewHolder.order.setText(mData.get(i).getOrder());
         myViewHolder.location.setText(mData.get(i).getOrder());
-        myViewHolder.Accept.setText(mData.get(i).getOrder());
+        myViewHolder.Accept.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                final FirebaseDatabase database = FirebaseDatabase.getInstance();
+                final DatabaseReference myRef = database.getReference("Anzeigen");
+                myRef.child(String.valueOf(i)).child("Accept").setValue("true");
+            }
+        });
         myViewHolder.picture.setImageDrawable(Drawable.createFromPath(mData.get(i).getOrder()));
 
 
@@ -58,7 +69,8 @@ public class generater_anzeigen_setter extends RecyclerView.Adapter<generater_an
     public class myViewHolder extends RecyclerView.ViewHolder{
 ImageView picture;
         MapView locationshown;
-        TextView name , reward , order , location , Accept;
+        TextView name , reward , order , location ;
+        Button Accept;
 
 
 
@@ -70,6 +82,8 @@ ImageView picture;
             reward = itemView.findViewById(R.id.reward_order);
             order = itemView.findViewById(R.id.order_order);
             location = itemView.findViewById(R.id.order_location);
+            picture = itemView.findViewById(R.id.picture);
+            Accept = itemView.findViewById(R.id.Accept);
         }
     }
 }
