@@ -6,7 +6,7 @@ public class generater {
     private String name_user;
     private String order;
     private String reward;
-    private LatLng location;
+    private String location;
     private String Accept;
     private String picture;
 
@@ -62,11 +62,11 @@ public class generater {
         this.reward = reward;
     }
 
-    public LatLng getLocation() {
+    public String getLocation() {
         return location;
     }
 
-    public void setLocation(LatLng location) {
+    public void setLocation(String location) {
         this.location = location;
     }
 }

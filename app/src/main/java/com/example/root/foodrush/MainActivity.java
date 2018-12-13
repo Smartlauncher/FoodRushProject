@@ -49,7 +49,7 @@ Register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Read from the database
-             
+
                 Intent intent = new Intent(MainActivity.this , Anzeigen.class);
                 startActivity(intent);
 

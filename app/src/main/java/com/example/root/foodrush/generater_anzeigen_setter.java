@@ -43,7 +43,7 @@ public class generater_anzeigen_setter extends RecyclerView.Adapter<generater_an
         myViewHolder.name.setText((mData.get(i).getName_user()));
         myViewHolder.reward.setText(mData.get(i).getReward());
         myViewHolder.order.setText(mData.get(i).getOrder());
-        myViewHolder.location.setText(mData.get(i).getOrder());
+        myViewHolder.location.setText(mData.get(i).getLocation());
         myViewHolder.Accept.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,7 +53,7 @@ public class generater_anzeigen_setter extends RecyclerView.Adapter<generater_an
                 myRef.child(String.valueOf(i)).child("Accept").setValue("true");
             }
         });
-        myViewHolder.picture.setImageDrawable(Drawable.createFromPath(mData.get(i).getOrder()));
+        myViewHolder.picture.setImageDrawable(Drawable.createFromPath(mData.get(i).getPicture()));
 
 
 
