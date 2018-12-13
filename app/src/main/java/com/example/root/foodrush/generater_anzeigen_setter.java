@@ -3,6 +3,7 @@ package com.example.root.foodrush;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -39,6 +40,9 @@ public class generater_anzeigen_setter extends RecyclerView.Adapter<generater_an
         myViewHolder.name.setText((mData.get(i).getName_user()));
         myViewHolder.reward.setText(mData.get(i).getReward());
         myViewHolder.order.setText(mData.get(i).getOrder());
+        myViewHolder.location.setText(mData.get(i).getOrder());
+        myViewHolder.Accept.setText(mData.get(i).getOrder());
+        myViewHolder.picture.setImageDrawable(Drawable.createFromPath(mData.get(i).getOrder()));
 
 
 
@@ -52,9 +56,10 @@ public class generater_anzeigen_setter extends RecyclerView.Adapter<generater_an
     }
 
     public class myViewHolder extends RecyclerView.ViewHolder{
-
+ImageView picture;
         MapView locationshown;
-        TextView name , reward , order , location;
+        TextView name , reward , order , location , Accept;
+
 
 
 

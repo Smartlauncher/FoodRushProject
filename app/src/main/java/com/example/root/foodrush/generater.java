@@ -7,18 +7,39 @@ public class generater {
     private String order;
     private String reward;
     private LatLng location;
+    private String Accept;
+    private String picture;
 
 
 
-    public generater(String name_user, String order, String reward) {
+
+    public generater(String s, String name, String was, String name_user, String order, String reward) {
         this.name_user = name_user;
         this.order = order;
         this.reward = reward;
         this.location = location;
+        this.picture = picture;
+        this.Accept = Accept;
     }
 
     public String getName_user() {
         return name_user;
+    }
+
+    public String getAccept() {
+        return Accept;
+    }
+
+    public void setAccept(String accept) {
+        Accept = accept;
+    }
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
 
     public void setName_user(String name_user) {

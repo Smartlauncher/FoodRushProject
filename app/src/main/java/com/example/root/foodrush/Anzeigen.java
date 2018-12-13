@@ -50,6 +50,9 @@ public class Anzeigen extends AppCompatActivity  {
     private String TAG = "Orders";
             String   numb;
             String Name;
+            String Accept;
+            String Wo;
+            private String picture;
             String Preis ;
             int size = 1;
             String Zeitraum;
@@ -123,6 +126,15 @@ mBottomNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.O
                         if(childSnapShot.getKey().equals("Name")){
                             Name=childSnapShot.getValue().toString();
                         }
+                        if(childSnapShot.getKey().equals("Wo")){
+                            Wo=childSnapShot.getValue().toString();
+                        }
+                        if(childSnapShot.getKey().equals("Accept")){
+                            Accept=childSnapShot.getValue().toString();
+                        }
+                        if(childSnapShot.getKey().equals("Picture")){
+                            picture=childSnapShot.getValue().toString();
+                        }
                         if(childSnapShot.getKey().equals("Was")){
                             Was=childSnapShot.getValue().toString();
                         }
@@ -142,7 +154,7 @@ mBottomNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.O
                     recyclerView.setAdapter(adapter);
                     recyclerView.setLayoutManager(new LinearLayoutManager(Anzeigen.this));
 
-                    mList.add(new generater(Name , Was , Preis ));
+                    mList.add(new generater(Name , Was , Preis, picture , Accept , Wo ));
 
 
 
