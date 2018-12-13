@@ -68,7 +68,7 @@ public class generater_anzeigen_setter extends RecyclerView.Adapter<generater_an
 
     public class myViewHolder extends RecyclerView.ViewHolder{
 ImageView picture;
-        MapView locationshown;
+
         TextView name , reward , order , location ;
         Button Accept;
 
@@ -77,7 +77,7 @@ ImageView picture;
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
-            locationshown = itemView.findViewById(R.id.mapView);
+
             name = itemView.findViewById(R.id.user_name_order);
             reward = itemView.findViewById(R.id.reward_order);
             order = itemView.findViewById(R.id.order_order);
