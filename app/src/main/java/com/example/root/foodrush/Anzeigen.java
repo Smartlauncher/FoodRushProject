@@ -52,7 +52,7 @@ public class Anzeigen extends AppCompatActivity  {
             String Name;
             String Accept;
             String Wo;
-            private String picture;
+            private int picture;
             String Preis ;
             int size = 1;
             String Zeitraum;
@@ -123,29 +123,33 @@ mBottomNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.O
 
 
                     for(DataSnapshot childSnapShot:ds.getChildren()){
-                        if(childSnapShot.getKey().equals("Name")){
-                            Name=childSnapShot.getValue().toString();
-                        }
-                        if(childSnapShot.getKey().equals("Wo")){
-                            Wo=childSnapShot.getValue().toString();
-                        }
-                        if(childSnapShot.getKey().equals("Accept")){
-                            Accept=childSnapShot.getValue().toString();
-                        }
-                        if(childSnapShot.getKey().equals("Picture")){
-                            picture=childSnapShot.getValue().toString();
-                        }
-                        if(childSnapShot.getKey().equals("Was")){
-                            Was=childSnapShot.getValue().toString();
-                        }
-                        if(childSnapShot.getKey().equals("Preis")){
-                            Preis=childSnapShot.getValue().toString();
-                        }
-                        if(childSnapShot.getKey().equals("Ort")){
-                            Ort=childSnapShot.getValue().toString();
-                        }
+                        if (childSnapShot.getKey() != null) {
+                            if (childSnapShot.getKey().equals("Name")) {
+                                Name = childSnapShot.getValue().toString();
+                            }
+                            if (childSnapShot.getKey().equals("Wo")) {
+                                Wo = childSnapShot.getValue().toString();
+                            }
+                            if (childSnapShot.getKey().equals("Accept")) {
+                                Accept = childSnapShot.getValue().toString();
+                            }
+                            if (childSnapShot.getKey().equals("Picture")) {
+                                picture = Integer.parseInt(childSnapShot.getValue().toString());
+                            }
+                            if (childSnapShot.getKey().equals("Was")) {
+                                Was = childSnapShot.getValue().toString();
+                            }
+                            if (childSnapShot.getKey().equals("Preis")) {
+                                Preis = childSnapShot.getValue().toString();
+                            }
+                            if (childSnapShot.getKey().equals("Ort")) {
+                                Ort = childSnapShot.getValue().toString();
+                            }
 
-
+                        }
+                        else{
+                            Toast.makeText(Anzeigen.this, "Dies könnte ein paar Sekunden dauern", Toast.LENGTH_SHORT).show();
+                        }
 
                     }
 
@@ -154,7 +158,7 @@ mBottomNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.O
                     recyclerView.setAdapter(adapter);
                     recyclerView.setLayoutManager(new LinearLayoutManager(Anzeigen.this));
 
-                    mList.add(new generater(Name , Was , Preis, picture , Accept , Wo ));
+                    mList.add(new generater(picture,Wo , Name , Was , Preis));
 
 
 
