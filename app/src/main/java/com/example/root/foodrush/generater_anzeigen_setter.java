@@ -3,6 +3,7 @@ package com.example.root.foodrush;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -53,7 +54,19 @@ public class generater_anzeigen_setter extends RecyclerView.Adapter<generater_an
                 myRef.child(String.valueOf(i)).child("Accept").setValue("true");
             }
         });
-        myViewHolder.picture.setImageDrawable(Drawable.createFromPath(mData.get(i).getPicture()));
+        if (mData.get(i).getPicture() == 1){
+            Drawable myDrawable = mContext.getResources().getDrawable(R.drawable.alex);
+            myViewHolder.picture.setImageDrawable(myDrawable);
+        }
+        if (mData.get(i).getPicture() == 2){
+            Drawable myDrawable = mContext.getResources().getDrawable(R.drawable.alex);
+            myViewHolder.picture.setImageDrawable(myDrawable);
+        }
+        if (mData.get(i).getPicture() == 3){
+            Drawable myDrawable = mContext.getResources().getDrawable(R.drawable.alex);
+            myViewHolder.picture.setImageDrawable(myDrawable);
+        }
+
 
 
 

@@ -1,44 +1,42 @@
 package com.example.root.foodrush;
 
-import com.google.android.gms.maps.model.LatLng;
-
 public class generater {
     private String name_user;
     private String order;
     private String reward;
     private String location;
-    private String Accept;
-    private String picture;
+    private boolean Accept;
+    private int picture;
 
 
 
 
-    public generater(String s, String name, String was, String name_user, String order, String reward) {
+    public generater(int picture, String location, String name_user, String order, String reward) {
         this.name_user = name_user;
         this.order = order;
         this.reward = reward;
         this.location = location;
         this.picture = picture;
-        this.Accept = Accept;
+
     }
 
     public String getName_user() {
         return name_user;
     }
 
-    public String getAccept() {
+    public boolean getAccept() {
         return Accept;
     }
 
-    public void setAccept(String accept) {
+    public void setAccept(boolean accept) {
         Accept = accept;
     }
 
-    public String getPicture() {
+    public int getPicture() {
         return picture;
     }
 
-    public void setPicture(String picture) {
+    public void setPicture(int picture) {
         this.picture = picture;
     }
 
