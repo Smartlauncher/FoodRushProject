@@ -52,7 +52,8 @@ public class Anzeigen extends AppCompatActivity  {
             String Name;
             String Accept;
             String Wo;
-            private int picture;
+            String Dringend;
+            private String picture;
             String Preis ;
             int size = 1;
             String Zeitraum;
@@ -113,43 +114,40 @@ mBottomNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.O
 
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference myRef = database.getReference("Anzeigen");
-
-
+        
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 final List<generater> mList = new ArrayList<>();
                 for(DataSnapshot ds:dataSnapshot.getChildren()){
-
+                    Toast.makeText(Anzeigen.this, "Manchmal braucht das laden l", Toast.LENGTH_SHORT).show();
 
                     for(DataSnapshot childSnapShot:ds.getChildren()){
-                        if (childSnapShot.getKey() != null) {
-                            if (childSnapShot.getKey().equals("Name")) {
-                                Name = childSnapShot.getValue().toString();
-                            }
-                            if (childSnapShot.getKey().equals("Wo")) {
-                                Wo = childSnapShot.getValue().toString();
-                            }
-                            if (childSnapShot.getKey().equals("Accept")) {
-                                Accept = childSnapShot.getValue().toString();
-                            }
-                            if (childSnapShot.getKey().equals("Picture")) {
-                                picture = Integer.parseInt(childSnapShot.getValue().toString());
-                            }
-                            if (childSnapShot.getKey().equals("Was")) {
-                                Was = childSnapShot.getValue().toString();
-                            }
-                            if (childSnapShot.getKey().equals("Preis")) {
-                                Preis = childSnapShot.getValue().toString();
-                            }
-                            if (childSnapShot.getKey().equals("Ort")) {
-                                Ort = childSnapShot.getValue().toString();
-                            }
 
-                        }
-                        else{
-                            Toast.makeText(Anzeigen.this, "Dies könnte ein paar Sekunden dauern", Toast.LENGTH_SHORT).show();
-                        }
+                       //    if (childSnapShot.getKey().equals("Name")) {
+                       //        Name = childSnapShot.getValue().toString();
+                       //    }
+                       //    if (childSnapShot.getKey().equals("Wo")) {
+                       //        Wo = childSnapShot.getValue().toString();
+                       //    }
+                       //    if (childSnapShot.getKey().equals("Accept")) {
+                       //        Accept = childSnapShot.getValue().toString();
+                       //    }
+                       //    if (childSnapShot.getKey().equals("Was")) {
+                       //        Was = childSnapShot.getValue().toString();
+                       //    }
+                       //    if (childSnapShot.getKey().equals("Preis")) {
+                       //        Preis = childSnapShot.getValue().toString();
+                       //    }
+                       //    if (childSnapShot.getKey().equals("Zeitraum")) {
+                       //        Zeitraum = childSnapShot.getValue().toString();
+                     //       }
+                     //       if (childSnapShot.getKey().equals("Dringend")) {
+                     //           Dringend = childSnapShot.getValue().toString();
+                     //       }
+
+
+
 
                     }
 
@@ -158,7 +156,7 @@ mBottomNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.O
                     recyclerView.setAdapter(adapter);
                     recyclerView.setLayoutManager(new LinearLayoutManager(Anzeigen.this));
 
-                    mList.add(new generater(picture,Wo , Name , Was , Preis));
+                    mList.add(new generater("coke","landkreis" , "Caleb" , "Coke" ,"5€" , "6 Uhr" , "True "));
 
 
 
