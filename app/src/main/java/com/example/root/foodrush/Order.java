@@ -135,10 +135,12 @@ public class Order extends AppCompatActivity
                 myRef.child(String.valueOf(numb)).child("Was").setValue(order_text);
                 myRef.child(String.valueOf(numb)).child("Preis").setValue(reward_text);
                 myRef.child(String.valueOf(numb)).child("Name").setValue(name_text);
-                myRef.child(String.valueOf(numb)).child("Straße").setValue(straße_text);
+                myRef.child(String.valueOf(numb)).child("Wo").setValue(straße_text);
                 myRef.child(String.valueOf(numb)).child("Zeitraum").setValue(timeframe_text);
                 myRef.child(String.valueOf(numb)).child("Accept").setValue(false);
                 myRef.child(String.valueOf(numb)).child("Dringend").setValue(boolean_answer);
+
+
 
             }
         });

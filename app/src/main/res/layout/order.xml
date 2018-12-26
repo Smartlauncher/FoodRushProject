@@ -7,14 +7,14 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:scaleType="centerCrop"
-        android:id="@+id/imageView2"
+        android:id="@+id/Picture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
         android:layout_marginTop="0dp"
+        android:scaleType="centerCrop"
         app:srcCompat="@drawable/alex" />
 
     <TextView
@@ -23,8 +23,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="19dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="5dp"
         android:fontFamily="cursive"
         android:text="Order some Food"
         android:textSize="30sp"
@@ -117,7 +117,7 @@
         android:layout_marginTop="54dp"
         android:ems="10"
         android:hint="name "
-        android:inputType="text|number"
+        android:inputType="text"
         android:maxLength="10" />
 
     <EditText
@@ -130,7 +130,7 @@
         android:layout_marginTop="103dp"
         android:ems="10"
         android:hint="straße"
-        android:inputType="textPostalAddress|number"
+        android:inputType="text"
         android:maxLength="10" />
 
     <EditText
@@ -182,5 +182,25 @@
         android:fontFamily="sans-serif"
         android:text="Fast Delivery"
         tools:checked="false" />
+
+    <Spinner
+        android:id="@+id/picture_select"
+        android:layout_width="211dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profil_t"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="151dp"
+        android:layout_marginTop="30dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profil_t"
+        android:layout_alignStart="@+id/profil_t"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="26dp"
+        android:text="Picture:"
+        android:textSize="20sp" />
 
 </RelativeLayout>

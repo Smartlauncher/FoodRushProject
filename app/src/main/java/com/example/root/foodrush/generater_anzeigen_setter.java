@@ -42,6 +42,8 @@ public class generater_anzeigen_setter extends RecyclerView.Adapter<generater_an
     @Override
     public void onBindViewHolder(@NonNull myViewHolder myViewHolder, final int i) {
         myViewHolder.name.setText((mData.get(i).getName_user()));
+        myViewHolder.dringend.setText(mData.get(i).getDringend());
+        myViewHolder.zeitraum.setText(mData.get(i).getZeitraum());
         myViewHolder.reward.setText(mData.get(i).getReward());
         myViewHolder.order.setText(mData.get(i).getOrder());
         myViewHolder.location.setText(mData.get(i).getLocation());
@@ -54,18 +56,18 @@ public class generater_anzeigen_setter extends RecyclerView.Adapter<generater_an
                 myRef.child(String.valueOf(i)).child("Accept").setValue("true");
             }
         });
-        if (mData.get(i).getPicture() == 1){
-            Drawable myDrawable = mContext.getResources().getDrawable(R.drawable.alex);
-            myViewHolder.picture.setImageDrawable(myDrawable);
-        }
-        if (mData.get(i).getPicture() == 2){
-            Drawable myDrawable = mContext.getResources().getDrawable(R.drawable.alex);
-            myViewHolder.picture.setImageDrawable(myDrawable);
-        }
-        if (mData.get(i).getPicture() == 3){
-            Drawable myDrawable = mContext.getResources().getDrawable(R.drawable.alex);
-            myViewHolder.picture.setImageDrawable(myDrawable);
-        }
+     //  if (mData.get(i).getPicture() == 1){
+     //      Drawable myDrawable = mContext.getResources().getDrawable(R.drawable.alex);
+     //      myViewHolder.picture.setImageDrawable(myDrawable);
+     //  }
+     //  if (mData.get(i).getPicture() == 2){
+     //      Drawable myDrawable = mContext.getResources().getDrawable(R.drawable.alex);
+     //      myViewHolder.picture.setImageDrawable(myDrawable);
+     //  }
+     //  if (mData.get(i).getPicture() == 3){
+     //      Drawable myDrawable = mContext.getResources().getDrawable(R.drawable.alex);
+     //      myViewHolder.picture.setImageDrawable(myDrawable);
+     //  }
 
 
 
@@ -82,7 +84,7 @@ public class generater_anzeigen_setter extends RecyclerView.Adapter<generater_an
     public class myViewHolder extends RecyclerView.ViewHolder{
 ImageView picture;
 
-        TextView name , reward , order , location ;
+        TextView name , reward , order , location ,zeitraum , dringend ;
         Button Accept;
 
 
@@ -90,7 +92,8 @@ ImageView picture;
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
-
+            zeitraum = itemView.findViewById(R.id.Zeitraum_text);
+            dringend = itemView.findViewById(R.id.dringend_text);
             name = itemView.findViewById(R.id.user_name_order);
             reward = itemView.findViewById(R.id.reward_order);
             order = itemView.findViewById(R.id.order_order);

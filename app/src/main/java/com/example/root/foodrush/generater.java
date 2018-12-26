@@ -5,19 +5,43 @@ public class generater {
     private String order;
     private String reward;
     private String location;
+    private String dringend;
+    private String zeitraum;
     private boolean Accept;
-    private int picture;
+    private String picture;
 
 
 
 
-    public generater(int picture, String location, String name_user, String order, String reward) {
+    public generater(String picture, String location, String name_user, String order, String reward, String zeitraum, String dringend) {
         this.name_user = name_user;
         this.order = order;
         this.reward = reward;
         this.location = location;
         this.picture = picture;
+        this.zeitraum = zeitraum;
+        this.dringend = dringend;
 
+    }
+
+    public String getDringend() {
+        return dringend;
+    }
+
+    public void setDringend(String dringend) {
+        this.dringend = dringend;
+    }
+
+    public String getZeitraum() {
+        return zeitraum;
+    }
+
+    public void setZeitraum(String zeitraum) {
+        this.zeitraum = zeitraum;
+    }
+
+    public boolean isAccept() {
+        return Accept;
     }
 
     public String getName_user() {
@@ -32,11 +56,11 @@ public class generater {
         Accept = accept;
     }
 
-    public int getPicture() {
+    public String getPicture() {
         return picture;
     }
 
-    public void setPicture(int picture) {
+    public void setPicture(String picture) {
         this.picture = picture;
     }
 
